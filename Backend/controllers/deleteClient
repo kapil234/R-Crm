@@ -1,0 +1,35 @@
+const Client = require("../models/clientModel");
+
+async function deleteClient(req, res){
+  try {
+    const clientId = req.params.id;
+    const userId = req.user._id; // from auth middleware
+
+    // ✅ delete only if belongs to logged-in agent
+    const deletedClient = await Client.findOneAndDelete({
+      _id: clientId,
+      agentId: userId
+    });
+
+    if (!deletedClient) {
+      return res.status(404).json({
+        success: false,
+        message: "Client not found or not authorized"
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Client deleted successfully"
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      success: false,
+      message: "Server error"
+    });
+  }
+};
+
+module.exports = deleteClient
