@@ -37,7 +37,7 @@ function Login() {
       const result = await response.json();
 
       if (result.success) {
-        await fetchUserDetails();
+        
         navigate("/");
       } else {
         alert(result.message);
