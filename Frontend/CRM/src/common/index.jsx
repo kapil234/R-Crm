@@ -1,8 +1,5 @@
-import AddProperty from "../components/AddProperties";
 
-
-
-const backendDomain= "http://localhost:8080"
+const backendDomain= import.meta.env.VITE_BACKEND_URL
 const SummaryApi = {
     allProperties : {
         url : `${backendDomain}/api/allProperties`,
