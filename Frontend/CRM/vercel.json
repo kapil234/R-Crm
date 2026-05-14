@@ -11,7 +11,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; font-src 'self' https://*.gstatic.com https://*.vercel.com https://*.blob.vercel-storage.com;"
+          "value": "default-src 'self'; font-src 'self' https://*.vercel.com https://*.gstatic.com https://*.blob.vercel-storage.com https://vercel.live data:;"
         }
       ]
     }
