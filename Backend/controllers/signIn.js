@@ -35,8 +35,8 @@ async function userSignIn(req, res) {
 
     const tokenOption = {
       httpOnly: true,
-      secure: false,      // for localhost
-      sameSite: "lax"
+      secure: false,     
+      sameSite: "None"
     };
     
 
